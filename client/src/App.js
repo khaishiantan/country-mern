@@ -96,62 +96,57 @@ class App extends Component {
       <div className="App">
         <div className="header1">
           <h1 className="title">Weather Checker</h1>
-         <br>
-         </br>
-              
-              <div className="containerSearch">
-                <form onSubmit={this.checkSavedCountry}>
-                  <label>Enter Country Name:</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    ref={(input) => (this.input = input)}
-                  />
-                  <br></br>
-                  <input className="reset" type="reset" value="Clear" />
-                  <input className="searchbtn" type="submit" value="Submit" />
-                </form>
-                <p />
-                <Link to="/manageCountry">
-            <button className="button1">Manage</button>
-          </Link>
-              </div>
-          
-            <div>
-              <Popup />
-            </div>
-          
+          <br></br>
+
+          <div className="containerSearch">
+            <form onSubmit={this.checkSavedCountry}>
+              <label>Enter Country Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                ref={(input) => (this.input = input)}
+              />
+              <br></br>
+              <input className="reset" type="reset" value="Clear" />
+              <input className="searchbtn" type="submit" value="Submit" />
+            </form>
+            <p />
+            <Link to="/manageCountry">
+              <button className="button1">Manage</button>
+            </Link>
+          </div>
+
+          <div>
+            <Popup />
+          </div>
         </div>
 
         <div className="container">
           <div className="col-sm-12">
             {data.map((item) => (
               <div>
-                <h1>{item.countryname}</h1>
                 <div class="container">
-                      <div class="weather-card one">
-                        <div class="top">
-                          <div class="wrapper">
-                            <div class="mynav">
-                              <a href="javascript:;">
-                                <span class="lnr lnr-chevron-left"></span>
-                              </a>
-                            </div>
-                            <h1 class="heading">{item.countryname}</h1>
-                            <h3 class="location">{item.weathermain}</h3>
-                            <p class="temp">
-                              <span class="temp-value">{item.temperature}</span>
-                              <span class="deg">0</span>
-                              <a href="javascript:;">
-                                <span class="temp-type">C</span>
-                              </a>
-                            </p>
-                            <h3 class="location">Weather Description: {item.weatherdes}</h3>
-                            <h3 class="location">Wind Speed: {item.windspeed}</h3>
-                          </div>
-                        </div>
+                  <div class="weather-card one">
+                    <div class="top">
+                      <div class="wrapper">
+                        <div class="mynav"></div>
+                        <h1 class="heading">{item.countryname}</h1>
+                        <img src={item.flag} width="100" height="100" />
+                        <h3 class="location">{item.weathermain}</h3>
+                        <p class="temp">
+                          <span class="temp-value">{item.temperature}</span>
+                          <span class="deg">0</span>
+                          <a href="javascript:;">
+                            <span class="temp-type">C</span>
+                          </a>
+                        </p>
+                        <h3 class="location">
+                          Weather Description: {item.weatherdes}
+                        </h3>
+                        <h3 class="location">Wind Speed: {item.windspeed}</h3>
+                      </div>
                     </div>
-                  
+                  </div>
                 </div>
               </div>
             ))}
