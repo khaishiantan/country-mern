@@ -151,6 +151,10 @@ body {
   width: 50%;
 
 }
+.containerSearch1{
+  align-content: center;
+  width: auto;
+}
 .button1{
   float: right;
   background-color: #5c1d3d;
@@ -172,6 +176,10 @@ body {
   background-color: #307272;
   width: 250px;
   border-radius: 15px;
+}
+.form{
+  width: 40%;
+  align-content: center;
 }
 
 

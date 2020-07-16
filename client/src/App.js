@@ -100,7 +100,7 @@ class App extends Component {
 
           <div className="containerSearch">
             <form onSubmit={this.checkSavedCountry}>
-              <label>Enter Country Name:</label>
+              <label><h3>Enter Country Name:</h3></label>
               <input
                 type="text"
                 class="form-control"
@@ -119,7 +119,7 @@ class App extends Component {
           <div>
             <Popup />
           </div>
-        </div>
+        </div><br></br>
 
         <div className="container">
           <div className="col-sm-12">
@@ -129,7 +129,6 @@ class App extends Component {
                   <div class="weather-card one">
                     <div class="top">
                       <div class="wrapper">
-                        <div class="mynav"></div>
                         <h1 class="heading">{item.countryname}</h1>
                         <img src={item.flag} width="100" height="100" />
                         <h3 class="location">{item.weathermain}</h3>
