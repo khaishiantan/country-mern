@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const CountryWeather = require("./CountryWeather");
+const PORT = process.env.PORT || 500;
 
 const apikey = "385e80";
 
@@ -158,4 +159,18 @@ app.get("/savecountryweather", (req, res) => {
 
 app.listen(5000, () => {
   console.log("server listening on port 5000");
+});
+
+if (process.env.NODE_ENV === "production") {
+	// Exprees will serve up production assets
+	app.use(express.static("client/build"));
+
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+	});
+}
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+	console.log(`Server listening on port ${port}`);
 });

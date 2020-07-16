@@ -99,17 +99,20 @@ class App extends Component {
           <br></br>
 
           <div className="containerSearch">
-            <form onSubmit={this.checkSavedCountry}>
-              <label><h3>Enter Country Name:</h3></label>
-              <input
-                type="text"
-                class="form-control"
-                ref={(input) => (this.input = input)}
-              />
-              <br></br>
-              <input className="reset" type="reset" value="Clear" />
-              <input className="searchbtn" type="submit" value="Submit" />
-            </form>
+              <form onSubmit={this.checkSavedCountry}>
+                <label>
+                  <h3>Enter Country Name:</h3>
+                </label>
+                <input
+                  type="text"
+                  class="form-control w-50"
+                  ref={(input) => (this.input = input)}
+                />
+                <br></br>
+                <input className="reset" type="reset" value="Clear" />
+                <input className="searchbtn" type="submit" value="Submit" />
+              </form>
+
             <p />
             <Link to="/manageCountry">
               <button className="button1">Manage</button>
@@ -119,7 +122,8 @@ class App extends Component {
           <div>
             <Popup />
           </div>
-        </div><br></br>
+        </div>
+        <br></br>
 
         <div className="container">
           <div className="col-sm-12">
